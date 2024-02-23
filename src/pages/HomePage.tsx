@@ -5,14 +5,14 @@ import ThemeSwitchButton from "../components/common/ThemeSwitchButton";
 const HomePage = () => {
   return (
     <div>
-      <Title color="brown" size="lg">
+      <Title color="brown" size="small">
         제목 테스트
       </Title>
       <ThemeSwitchButton />
-      <Button color="black" size="md">
+      <Button color="black" size="medium">
         버튼 테스트
       </Button>
-      <Button color="white" size="lg">
+      <Button type="submit" color="white" size="large">
         버튼 테스트
       </Button>
     </div>

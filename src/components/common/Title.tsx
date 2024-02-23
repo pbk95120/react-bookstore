@@ -1,8 +1,8 @@
-import { Color, Size } from "@/types/type";
+import { Color, TitleSize } from "@/types/type";
 
 interface TitleProps {
-  color: Color;
-  size: Size;
+  color?: Color;
+  size: TitleSize;
   className?: string;
   children: React.ReactNode;
 }
@@ -27,19 +27,23 @@ const Title = ({ color, size, className, children }: TitleProps) => {
       combinedClassName += " text-green";
       break;
     }
+    default: {
+      combinedClassName += " text-brown";
+      break;
+    }
   }
 
   switch (size) {
-    case "sm": {
-      combinedClassName += " text-Csm";
+    case "small": {
+      combinedClassName += " text-small";
       break;
     }
-    case "md": {
-      combinedClassName += " text-Cmd";
+    case "medium": {
+      combinedClassName += " text-medium";
       break;
     }
-    case "lg": {
-      combinedClassName += " text-Clg";
+    case "large": {
+      combinedClassName += " text-large";
       break;
     }
   }

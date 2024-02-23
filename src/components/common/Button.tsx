@@ -1,9 +1,9 @@
-type ButtonColor = "white" | "black";
-type ButtonSize = "sm" | "md" | "lg";
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/type";
 
 interface ButtonProps {
-  type?: "button" | "submit" | "reset";
+  type?: ButtonType;
   disabled?: boolean;
+  isLoading?: boolean;
   color: ButtonColor;
   size: ButtonSize;
   className?: string;
@@ -18,30 +18,40 @@ const Button = ({
   className,
   children,
 }: ButtonProps) => {
-  let combinedClassName: string = "rounded-lg border font-semibold";
+  let combinedClassName: string = "rounded font-semibold";
+
+  if (disabled) {
+    combinedClassName += " opacity-50 pointer-events-none";
+  } else {
+    combinedClassName += " opacity-100 pointer-events-auto";
+  }
 
   switch (color) {
     case "white": {
-      combinedClassName += " text-black border-black bg-white";
+      combinedClassName += " text-white bg-midnightblue";
       break;
     }
     case "black": {
-      combinedClassName += " text-white border-white bg-black";
+      combinedClassName += " text-black bg-lightgray";
+      break;
+    }
+    default: {
+      combinedClassName += " text-white bg-midnightblue";
       break;
     }
   }
 
   switch (size) {
-    case "sm": {
-      combinedClassName += " py-1.5 px-3 text-sm";
+    case "small": {
+      combinedClassName += " py-1 px-2 text-xs";
       break;
     }
-    case "md": {
-      combinedClassName += " py-2 px-4 text-md";
+    case "medium": {
+      combinedClassName += " py-2 px-4 text-base";
       break;
     }
-    case "lg": {
-      combinedClassName += " py-2 px-4 text-lg";
+    case "large": {
+      combinedClassName += " py-4 px-8 text-2xl";
       break;
     }
   }

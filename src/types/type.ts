@@ -1,2 +1,6 @@
 export type Color = "brown" | "lightgray" | "blue" | "green";
-export type Size = "sm" | "md" | "lg";
+export type TitleSize = "small" | "medium" | "large";
+
+export type ButtonType = "button" | "submit" | "reset";
+export type ButtonColor = "white" | "black";
+export type ButtonSize = "small" | "medium" | "large";
