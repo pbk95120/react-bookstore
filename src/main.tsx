@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "sanitize.css";
 import "./index.css";
+// import "sanitize.css"; // tailwind includes Preflight
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

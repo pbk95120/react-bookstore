@@ -4,11 +4,11 @@ import Sidebar from "../components/common/Sidebar";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <MainHeader />
       <Sidebar />
       <MainFooter />
-    </div>
+    </>
   );
 };
 
