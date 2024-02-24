@@ -1,14 +1,4 @@
-import { ButtonColor, ButtonSize, ButtonType } from "@/types/type";
-
-interface ButtonProps {
-  type?: ButtonType;
-  disabled?: boolean;
-  isLoading?: boolean;
-  color: ButtonColor;
-  size: ButtonSize;
-  className?: string;
-  children: React.ReactNode; // string + svg
-}
+import { ButtonProps } from "@/types/type";
 
 const Button = ({
   type,

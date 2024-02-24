@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Button from "../components/common/Button";
 
 describe("Button 컴포넌트", () => {
-  test("버튼이 렌더링되어야 함", () => {
+  test("버튼 렌더링 확인", () => {
     render(
       <Button color="white" size="medium">
         클릭하세요
@@ -15,7 +15,7 @@ describe("Button 컴포넌트", () => {
     expect(buttonElement).toBeInTheDocument();
   });
 
-  test("버튼의 타입이 전달된 경우 해당 타입이 적용되어야 함", () => {
+  test("버튼의 Type 확인", () => {
     render(
       <Button type="submit" color="white" size="medium">
         제출
@@ -27,7 +27,7 @@ describe("Button 컴포넌트", () => {
     expect(buttonElement).toHaveAttribute("type", "submit");
   });
 
-  test("버튼이 비활성화된 경우 해당 클래스가 적용되어야 함", () => {
+  test("버튼의 disabled 확인", () => {
     render(
       <Button disabled color="white" size="medium">
         비활성화

@@ -1,11 +1,4 @@
-import { Color, TitleSize } from "@/types/type";
-
-interface TitleProps {
-  color?: Color;
-  size: TitleSize;
-  className?: string;
-  children: React.ReactNode;
-}
+import { TitleProps } from "@/types/type";
 
 const Title = ({ color, size, className, children }: TitleProps) => {
   let combinedClassName: string = "rounded-lg border font-semibold";

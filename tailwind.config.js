@@ -5,16 +5,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        brown: "#A52A2A",
+        brown: "#ff5800",
         lightgray: "#D3D3D3",
         blue: "#0000FF",
         green: "#008000",
         midnightblue: "#191970",
+        grey: "#808080",
       },
       fontSize: {
         small: "1rem",
         medium: "1.5rem",
         large: "2rem",
+      },
+      width: {
+        small: "320px",
+        medium: "760px",
+        large: "1020px",
       },
     },
   },
