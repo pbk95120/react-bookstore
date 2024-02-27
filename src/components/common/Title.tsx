@@ -1,7 +1,10 @@
 import { TitleProps } from "@/types/type";
 
+/**
+ * 공용 Title 컴포넌트
+ */
 const Title = ({ color, size, className, children }: TitleProps) => {
-  let combinedClassName: string = "rounded-lg border font-semibold";
+  let combinedClassName: string = "rounded-lg font-semibold";
 
   switch (color) {
     case "brown": {
@@ -21,7 +24,7 @@ const Title = ({ color, size, className, children }: TitleProps) => {
       break;
     }
     default: {
-      combinedClassName += " text-brown";
+      combinedClassName += " text-orange";
       break;
     }
   }

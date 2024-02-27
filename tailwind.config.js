@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        brown: "#ff5800",
+        brown: "#A52A2A",
+        orange: "#FFA500",
         lightgray: "#D3D3D3",
         blue: "#0000FF",
         green: "#008000",

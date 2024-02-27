@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+/**
+ * Light/Dark 모드 전환 버튼
+ */
 const ThemeSwitchButton = () => {
   const [dark, setDark] = useState<boolean>(false);
 

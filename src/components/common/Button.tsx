@@ -1,5 +1,8 @@
 import { ButtonProps } from "@/types/type";
 
+/**
+ * 공용 버튼 컴포넌트
+ */
 const Button = ({
   type,
   disabled,
