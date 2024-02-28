@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage.tsx";
 import SignUpPage from "./pages/SignUpPage.tsx";
 import ResetPasswordPage from "./pages/ResetPasswordPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
+import BooksPage from "./pages/BooksPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/books",
-    element: <div>도서 목록</div>,
+    element: (
+      <Layout>
+        <BooksPage />
+      </Layout>
+    ),
   },
   {
     path: "/login",

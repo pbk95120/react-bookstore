@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         brown: "#A52A2A",
-        orange: "#FFA500",
+        orange: "#ea672a",
         lightgray: "#D3D3D3",
         blue: "#0000FF",
         green: "#008000",

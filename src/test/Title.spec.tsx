@@ -8,7 +8,7 @@ describe("Title 컴포넌트", () => {
 
     const titleElement = screen.getByText("테스트 제목");
 
-    expect(titleElement).toHaveClass("text-brown");
+    expect(titleElement).toHaveClass("text-orange");
   });
 
   test("size props 확인", () => {
