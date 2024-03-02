@@ -1,5 +1,5 @@
 const BooksViewSwitcher = () => {
-  return <>1</>;
+  return <>BooksViewSwitcher</>;
 };
 
 export default BooksViewSwitcher;

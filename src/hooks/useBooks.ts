@@ -13,6 +13,7 @@ export const useBooks = () => {
     totalCount: 0,
     currentPage: 1,
   });
+  const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
     const params = new URLSearchParams(loacation.search);
@@ -29,8 +30,9 @@ export const useBooks = () => {
     }).then((res) => {
       setBooks(res.books);
       setPagination(res.pagination);
+      setIsEmpty(res.books.length === 0);
     });
   }, [location.search]);
 
-  return { books, pagination };
+  return { books, pagination, isEmpty };
 };

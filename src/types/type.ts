@@ -62,6 +62,7 @@ export interface Book {
   likes: number;
   pubDate: string;
 }
+
 export interface BookDetail extends Book {
   categoryName: string;
   liked: boolean;

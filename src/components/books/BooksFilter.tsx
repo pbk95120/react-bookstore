@@ -28,7 +28,7 @@ const BooksFilter = () => {
 
   return (
     <div className="flex gap-2">
-      <div className="">
+      <div className="flex gap-2 mr-4">
         {category.map((item) => (
           <Button
             size="medium"

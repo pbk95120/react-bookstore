@@ -7,15 +7,19 @@ import Pagination from "../components/books/Pagination";
 import { useBooks } from "../hooks/useBooks";
 
 const BooksPage = () => {
-  const { books, pagination } = useBooks();
+  const { books, pagination, isEmpty } = useBooks();
   return (
     <>
       <Title size="large">도서 목록</Title>
-      <BooksFilter />
-      <BooksViewSwitcher />
-      <BooksList books={books} />
-      <BooksEmpty />
-      <Pagination />
+      <div className="flex flex-col justify-between gap-6">
+        <div className="flex justify-between items-center gap-5">
+          <BooksFilter />
+          <BooksViewSwitcher />
+        </div>
+        {!isEmpty && <BooksList books={books} />}
+        {isEmpty && <BooksEmpty />}
+        {!isEmpty && <Pagination pagination={pagination} />}
+      </div>
     </>
   );
 };

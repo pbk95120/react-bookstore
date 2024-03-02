@@ -7,7 +7,7 @@ interface Props {
 
 const BooksList = ({ books }: Props) => {
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-6">
       {books?.map((item) => (
         <BookItem key={item.id} book={item} />
       ))}

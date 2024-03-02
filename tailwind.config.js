@@ -7,7 +7,7 @@ export default {
       colors: {
         brown: "#A52A2A",
         orange: "#ea672a",
-        lightgray: "#D3D3D3",
+        lightgray: "#a9a9a9",
         blue: "#0000FF",
         green: "#008000",
         midnightblue: "#191970",
