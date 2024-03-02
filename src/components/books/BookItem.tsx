@@ -21,7 +21,7 @@ const BookItem = ({ book }: Props) => {
         <h2 className="text-xl font-bold mb-3">{book.title}</h2>
         <p className="text-sm	mb-1 text-lightgray">{book.summary}</p>
         <p className="text-sm	mb-1 text-lightgray">{book.author}</p>
-        <p className="text-sm	font-bold mb-1 text-lightgray">
+        <p className="text-sm	font-bold mb-1 text-grey">
           {formatNumber(book.price)}원
         </p>
         <div className="inline-flex items-center gap-1 text-sm mb-1 font-bold border-solid border rounded py-1 px-3 absolute bottom-4 right-4">

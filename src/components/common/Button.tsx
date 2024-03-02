@@ -6,6 +6,7 @@ import { ButtonProps } from "@/types/type";
 const Button = ({
   type,
   disabled,
+  onClick,
   color,
   size,
   className,
@@ -53,6 +54,7 @@ const Button = ({
     <button
       type={type}
       disabled={disabled}
+      onClick={() => onClick}
       className={`${combinedClassName} ${className}`}
     >
       {children}

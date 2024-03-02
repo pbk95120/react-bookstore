@@ -13,6 +13,7 @@ export type ButtonSize = "small" | "medium" | "large";
 export interface ButtonProps {
   type?: ButtonType;
   disabled?: boolean;
+  onClick?: () => void;
   isLoading?: boolean;
   color: ButtonColor;
   size: ButtonSize;
@@ -42,6 +43,7 @@ export interface User {
 export interface Category {
   category_id: number | null;
   category_name: string;
+  isActive?: boolean;
 }
 
 export interface Book {
@@ -97,4 +99,21 @@ export interface SignupProps {
 
 export interface LoginResponse {
   token: string;
+}
+
+export interface Pagination {
+  currentPage: number;
+  totalCount: number;
+}
+
+export interface FetchBooksParams {
+  category_id?: number;
+  news?: boolean;
+  currentPage?: number;
+  limit: number;
+}
+
+export interface FetchBooksResponse {
+  books: Book[];
+  pagination: Pagination;
 }

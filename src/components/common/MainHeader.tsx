@@ -12,7 +12,7 @@ const MainHeader = () => {
   const { isLoggedIn, storeLogout } = useAuthStore();
 
   return (
-    <header className="flex justify-between	items-center py-5 px-0 border-b border-solid border-grey w-full my-0 mx-auto max-w-screen-lg">
+    <header className="flex justify-between	items-center py-5 px-0 border-b border-solid  w-full my-0 mx-auto max-w-screen-lg">
       <h1 className="logo">
         <img src={logo} alt="book store" className="w-48" />
       </h1>
