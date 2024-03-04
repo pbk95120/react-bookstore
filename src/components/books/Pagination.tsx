@@ -28,8 +28,9 @@ const Pagination = ({ pagination }: Props) => {
           {Array(pages)
             .fill(0)
             .map((_, index) => (
-              <li>
+              <li key={index}>
                 <Button
+                  key={index}
                   size="small"
                   color={
                     index + 1 === pagination.currentPage ? "white" : "black"

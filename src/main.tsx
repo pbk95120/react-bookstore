@@ -10,6 +10,7 @@ import SignUpPage from "./pages/SignUpPage.tsx";
 import ResetPasswordPage from "./pages/ResetPasswordPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
 import BooksPage from "./pages/BooksPage.tsx";
+import BookDetailPage from "./pages/BookDetailPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <BooksPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/book/:bookId",
+    element: (
+      <Layout>
+        <BookDetailPage />
       </Layout>
     ),
   },

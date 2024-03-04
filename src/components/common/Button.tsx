@@ -29,6 +29,10 @@ const Button = ({
       combinedClassName += " text-black bg-lightgray";
       break;
     }
+    case "coral": {
+      combinedClassName += " text-white bg-coral";
+      break;
+    }
     default: {
       combinedClassName += " text-white bg-midnightblue";
       break;
@@ -54,7 +58,7 @@ const Button = ({
     <button
       type={type}
       disabled={disabled}
-      onClick={() => onClick}
+      onClick={onClick}
       className={`${combinedClassName} ${className}`}
     >
       {children}

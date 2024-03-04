@@ -38,7 +38,7 @@ export const useCategory = () => {
       if (!category) return;
 
       const categoryWithAll = [
-        { category_id: null, category_name: "전체" },
+        { category_id: null, categoryName: "전체" },
         ...category,
       ];
       setCategory(categoryWithAll);

@@ -12,6 +12,7 @@ export default {
         green: "#008000",
         midnightblue: "#191970",
         grey: "#808080",
+        coral: "#ff4500",
       },
       fontSize: {
         small: "1rem",

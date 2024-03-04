@@ -24,6 +24,7 @@ const BooksFilter = () => {
     } else {
       newSearchParams.set(QUERYSTRING.NEWS, "true");
     }
+    setSearchParams(newSearchParams);
   };
 
   return (
@@ -36,7 +37,7 @@ const BooksFilter = () => {
             key={item.category_id}
             onClick={() => handleCategory(item.category_id)}
           >
-            {item.category_name}
+            {item.categoryName}
           </Button>
         ))}
       </div>

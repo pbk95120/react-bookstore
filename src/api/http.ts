@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { getToken, removeToken } from "../store/authStore";
 
-const BASE_URL = "api";
+const BASE_URL = "/api";
 const DEFAULT_TIMEOUT = 30000;
 
 /**
@@ -12,7 +12,7 @@ export const createClient = (config?: AxiosRequestConfig) => {
     baseURL: BASE_URL,
     timeout: DEFAULT_TIMEOUT,
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
       Authorization: getToken() ? getToken() : "",
     },
     withCredentials: true,

@@ -28,7 +28,7 @@ const MainHeader = () => {
                 }
                 className="text-medium font-semibold no-underline hover:text-orange"
               >
-                {item.category_name}
+                {item.categoryName}
               </Link>
             </li>
           ))}

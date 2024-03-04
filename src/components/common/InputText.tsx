@@ -6,7 +6,14 @@ import { InputTextProps } from "@/types/type";
  */
 const InputText = React.forwardRef(
   (
-    { placeholder, name, inputType, onChange, className }: InputTextProps,
+    {
+      placeholder,
+      name,
+      inputType,
+      value,
+      onChange,
+      className,
+    }: InputTextProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
@@ -14,6 +21,7 @@ const InputText = React.forwardRef(
         className={`py-1 px-3 border border-solid border-grey rounded font-small text-black leading-6 ${className}`}
         placeholder={placeholder}
         name={name}
+        value={value}
         ref={ref}
         type={inputType}
         onChange={onChange}

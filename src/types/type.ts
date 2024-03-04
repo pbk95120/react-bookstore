@@ -8,7 +8,7 @@ export interface TitleProps {
 }
 
 export type ButtonType = "button" | "submit" | "reset";
-export type ButtonColor = "white" | "black";
+export type ButtonColor = "white" | "black" | "coral";
 export type ButtonSize = "small" | "medium" | "large";
 export interface ButtonProps {
   type?: ButtonType;
@@ -42,7 +42,7 @@ export interface User {
 
 export interface Category {
   category_id: number | null;
-  category_name: string;
+  categoryName: string;
   isActive?: boolean;
 }
 
@@ -118,3 +118,5 @@ export interface FetchBooksResponse {
   books: Book[];
   pagination: Pagination;
 }
+
+export type ViewMode = "list" | "grid";

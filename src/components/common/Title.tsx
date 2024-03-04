@@ -24,7 +24,7 @@ const Title = ({ color, size, className, children }: TitleProps) => {
       break;
     }
     default: {
-      combinedClassName += " text-orange";
+      combinedClassName += " text-black";
       break;
     }
   }
