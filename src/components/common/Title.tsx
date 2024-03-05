@@ -23,6 +23,10 @@ const Title = ({ color, size, className, children }: TitleProps) => {
       combinedClassName += " text-green";
       break;
     }
+    case "orange": {
+      combinedClassName += " text-orange";
+      break;
+    }
     default: {
       combinedClassName += " text-black";
       break;

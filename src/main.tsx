@@ -11,6 +11,9 @@ import ResetPasswordPage from "./pages/ResetPasswordPage.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
 import BooksPage from "./pages/BooksPage.tsx";
 import BookDetailPage from "./pages/BookDetailPage.tsx";
+import CartPage from "./pages/CartPage.tsx";
+import OrderPage from "./pages/OrderPage.tsx";
+import OrderListPage from "./pages/OrderListPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +38,30 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <BookDetailPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/cart",
+    element: (
+      <Layout>
+        <CartPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/order",
+    element: (
+      <Layout>
+        <OrderPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/orderlist",
+    element: (
+      <Layout>
+        <OrderListPage />
       </Layout>
     ),
   },

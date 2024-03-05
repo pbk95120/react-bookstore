@@ -10,7 +10,7 @@ import { useAlert } from "../hooks/useAlert";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
-  const showAlert = useAlert();
+  const { showAlert } = useAlert();
 
   const {
     register,

@@ -1,4 +1,5 @@
-export type TitleColor = "brown" | "lightgray" | "blue" | "green";
+export type TitleColor = "brown" | "lightgray" | "blue" | "green" | "orange";
+
 export type TitleSize = "small" | "medium" | "large";
 export interface TitleProps {
   color?: TitleColor;
@@ -120,3 +121,38 @@ export interface FetchBooksResponse {
 }
 
 export type ViewMode = "list" | "grid";
+
+export interface AddCartParams {
+  book_id: number;
+  quantity: number;
+}
+
+export interface OrderSheet {
+  items: number[];
+  totalQuantity: number;
+  totalPrice: number;
+  firstBookTitle: string;
+  delivery: {
+    address: string;
+    receiver: string;
+    contact: string;
+  };
+}
+
+export interface Delivery {
+  address: string;
+  receiver: string;
+  contact: string;
+}
+
+export interface OrderDetailItem {
+  bookId: number;
+  title: string;
+  author: string;
+  price: number;
+  quantity: number;
+}
+
+export interface OrderListItem extends Order {
+  detail?: OrderDetailItem[];
+}

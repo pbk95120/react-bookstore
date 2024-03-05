@@ -24,6 +24,13 @@ export default {
         medium: "760px",
         large: "1020px",
       },
+      listStyleType: {
+        none: "none",
+        disc: "disc",
+        decimal: "decimal",
+        square: "square",
+        roman: "upper-roman",
+      },
     },
   },
   plugins: [],

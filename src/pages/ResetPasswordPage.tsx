@@ -11,7 +11,7 @@ import { useAlert } from "../hooks/useAlert";
 
 const ResetPassWordPage = () => {
   const navigate = useNavigate();
-  const showAlert = useAlert();
+  const { showAlert } = useAlert();
   const [resetRequested, setResetRequested] = useState(false);
 
   const {

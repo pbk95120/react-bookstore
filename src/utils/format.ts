@@ -4,6 +4,6 @@ export const formatNumber = (number: number): string => {
   return number.toLocaleString();
 };
 
-export const formatDate = (date: string): string => {
-  return dayjs(date).format("YYYY년 MM월 DD일");
+export const formatDate = (date: string, format?: string) => {
+  return dayjs(date).format(format ? format : "YYYY년 MM월 DD일");
 };
