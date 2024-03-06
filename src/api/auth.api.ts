@@ -1,13 +1,12 @@
-import { httpClient } from "./http";
-import { SignupProps, LoginResponse } from "@/types/type";
+import { requestHandler } from "@/api/http";
+import { SignupProps } from "@/types/type";
 
 /**
  * 회원가입 Post API
  * @param userDate
  */
 export const signup = async (userDate: SignupProps) => {
-  const response = await httpClient().post("/users/join", userDate);
-  return response.data;
+  return await requestHandler("post", "/users/join", userDate);
 };
 
 /**
@@ -15,8 +14,7 @@ export const signup = async (userDate: SignupProps) => {
  * @param userDate
  */
 export const resetRequsest = async (data: SignupProps) => {
-  const response = await httpClient().post("/users/reset", data);
-  return response.data;
+  return await requestHandler("post", "/users/reset", data);
 };
 
 /**
@@ -24,8 +22,7 @@ export const resetRequsest = async (data: SignupProps) => {
  * @param userDate
  */
 export const resetPassword = async (data: SignupProps) => {
-  const response = await httpClient().put("/users/reset", data);
-  return response.data;
+  return await requestHandler("put", "/users/reset", data);
 };
 
 /**
@@ -33,6 +30,5 @@ export const resetPassword = async (data: SignupProps) => {
  * @param userDate
  */
 export const login = async (data: SignupProps) => {
-  const response = await httpClient().post<LoginResponse>("/users/login", data);
-  return response.data;
+  return await requestHandler("post", "/users/login", data);
 };

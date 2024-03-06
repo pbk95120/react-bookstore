@@ -1,5 +1,4 @@
-import { formatNumber } from "../../utils/format";
-
+import { formatNumber } from "@/utils/format";
 interface Props {
   totalQuantity: number;
   totalPrice: number;

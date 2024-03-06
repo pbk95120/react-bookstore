@@ -1,5 +1,5 @@
-import MainHeader from "../components/common/MainHeader";
-import MainFooter from "../components/common/MainFooter";
+import MainHeader from "@/components/common/MainHeader";
+import MainFooter from "@/components/common/MainFooter";
 
 /**
  * Layout component

@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
-import BookItem from "./BookItem";
-import { Book, ViewMode } from "@/types/type";
 import { useState, useEffect } from "react";
-import { QUERYSTRING } from "../../constants/querystring";
+import { useLocation } from "react-router-dom";
+import { Book, ViewMode } from "@/types/type";
+import { QUERYSTRING } from "@/constants/querystring";
+import BookItem from "@/components/books/BookItem";
 
 interface Props {
   books: Book[];

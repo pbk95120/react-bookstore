@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from "@/components/common/Title";
 
 interface Props {
   icon?: React.ReactNode;
@@ -6,6 +6,9 @@ interface Props {
   description: React.ReactNode;
 }
 
+/**
+ * 공용 빈 페이지 컴포넌트
+ */
 const Empty = ({ icon, title, description }: Props) => {
   return (
     <div className="flex flex-col justify-center items-center gap-3 py-30">

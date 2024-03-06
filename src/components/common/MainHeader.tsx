@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
 import { FaSignInAlt, FaRegUser } from "react-icons/fa";
-import { useCategory } from "../../hooks/useCategory";
-import { useAuthStore } from "../../store/authStore";
+import logo from "@/assets/images/logo.png";
+import { useCategory } from "@/hooks/useCategory";
+import { useAuthStore } from "@/store/authStore";
 
 /**
  * Main Header컴포넌트

@@ -1,4 +1,4 @@
-import { httpClient } from "./http";
+import { requestHandler } from "@/api/http";
 import { AddCartParams, Cart } from "@/types/type";
 
 /**
@@ -6,8 +6,7 @@ import { AddCartParams, Cart } from "@/types/type";
  * @param userDate
  */
 export const addCart = async (params: AddCartParams) => {
-  const response = await httpClient().post("/carts", params);
-  return response.data;
+  return await requestHandler("post", "/carts", params);
 };
 
 /**
@@ -15,8 +14,7 @@ export const addCart = async (params: AddCartParams) => {
  * @param userDate
  */
 export const fetchCart = async () => {
-  const response = await httpClient().get<Cart[]>("/carts");
-  return response.data;
+  return await requestHandler<Cart[]>("get", "/carts");
 };
 
 /**
@@ -24,6 +22,5 @@ export const fetchCart = async () => {
  * @param userDate
  */
 export const deleteCart = async (cartId: number) => {
-  const response = await httpClient().delete(`/carts/${cartId}`);
-  return response.data;
+  return await requestHandler("delete", `/carts/${cartId}`);
 };

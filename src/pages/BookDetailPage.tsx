@@ -1,12 +1,13 @@
-import { getImgSrc } from "../utils/image";
-import { useBook } from "../hooks/useBook";
 import { Link, useParams } from "react-router-dom";
-import Title from "../components/common/Title";
+import { useBook } from "@/hooks/useBook";
+import { getImgSrc } from "@/utils/image";
+import { formatDate, formatNumber } from "@/utils/format";
 import { BookDetail as IBookDetail } from "@/types/type";
-import { formatDate, formatNumber } from "../utils/format";
-import EllipsisBox from "../components/common/EllipsisBox";
-import LikeButton from "../components/book/LikeButton";
-import AddToCart from "../components/book/AddToCart";
+import Title from "@/components/common/Title";
+import EllipsisBox from "@/components/common/EllipsisBox";
+import LikeButton from "@/components/book/LikeButton";
+import AddToCart from "@/components/book/AddToCart";
+import BookReview from "@/components/book/BookReview";
 
 const bookInfoList = [
   {
@@ -46,7 +47,7 @@ const bookInfoList = [
 
 const BookDetailPage = () => {
   const { bookId } = useParams();
-  const { book, likeToggle } = useBook(bookId);
+  const { book, likeToggle, reviews } = useBook(bookId);
 
   if (!book) {
     return null;
@@ -64,8 +65,8 @@ const BookDetailPage = () => {
         </div>
         <div className="flex flex-1 flex-col gap-3">
           <Title size="large">{book.title}</Title>
-          {bookInfoList.map((item) => (
-            <dl className="flex m-0">
+          {bookInfoList.map((item, index) => (
+            <dl key={index} className="flex m-0">
               <dt className="w-20 text-lightgray">{item.label}</dt>
               <dt className="w-30">
                 {item.filter
@@ -93,6 +94,8 @@ const BookDetailPage = () => {
         <EllipsisBox linelimit={4}>{book.title}</EllipsisBox>
         <Title size="large">목차</Title>
         <p>{book.contents}</p>
+        <Title size="large">리뷰</Title>
+        <BookReview reviews={reviews} />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-import { FaList, FaTh } from "react-icons/fa";
-import Button from "../common/Button";
-import { useSearchParams } from "react-router-dom";
-import { QUERYSTRING } from "../../constants/querystring";
 import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { FaList, FaTh } from "react-icons/fa";
+import Button from "@/components/common/Button";
+import { QUERYSTRING } from "@/constants/querystring";
 
 const viewOptions = [
   {

@@ -1,5 +1,5 @@
-import { fetchOrders, fetchOrder } from "../api/order.api";
 import { useState, useEffect } from "react";
+import { fetchOrders, fetchOrder } from "@/api/order.api";
 import { OrderListItem } from "@/types/type";
 
 export const useOrders = () => {

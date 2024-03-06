@@ -1,5 +1,5 @@
+// Title ================================================
 export type TitleColor = "brown" | "lightgray" | "blue" | "green" | "orange";
-
 export type TitleSize = "small" | "medium" | "large";
 export interface TitleProps {
   color?: TitleColor;
@@ -8,6 +8,7 @@ export interface TitleProps {
   children: React.ReactNode;
 }
 
+// Button ================================================
 export type ButtonType = "button" | "submit" | "reset";
 export type ButtonColor = "white" | "black" | "coral";
 export type ButtonSize = "small" | "medium" | "large";
@@ -22,6 +23,7 @@ export interface ButtonProps {
   children: React.ReactNode; // string + svg
 }
 
+// InputText ================================================
 export interface InputTextProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
@@ -30,23 +32,49 @@ export interface InputTextProps
   className?: string;
 }
 
+// Route ================================================
 export interface RouteError {
   statusText?: string;
   message?: string;
 }
 
+// View ================================================
+export interface Pagination {
+  currentPage: number;
+  totalCount: number;
+}
+
+export type ViewMode = "list" | "grid";
+
+// User ================================================
 export interface User {
   id: number;
   email: string;
   password?: string;
 }
 
+export interface LoginProps {
+  email: string;
+  password: string;
+}
+
+export interface SignupProps {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  token: string;
+}
+
+// Category ================================================
 export interface Category {
   category_id: number | null;
   categoryName: string;
   isActive?: boolean;
 }
 
+// Book ================================================
 export interface Book {
   id: number;
   title: string;
@@ -69,45 +97,6 @@ export interface BookDetail extends Book {
   liked: boolean;
 }
 
-export interface Pagination {
-  currentPage: number;
-  totalCount: number;
-}
-
-export interface Cart {
-  id: number;
-  bookId: number;
-  title: string;
-  summary: string;
-  quantity: number;
-  price: number;
-}
-
-export interface Order {
-  id: number;
-  createdAt: string;
-  address: string;
-  receiver: string;
-  contact: string;
-  bookTitle: string;
-  totalQuantity: number;
-  totalPrice: number;
-}
-
-export interface SignupProps {
-  email: string;
-  password: string;
-}
-
-export interface LoginResponse {
-  token: string;
-}
-
-export interface Pagination {
-  currentPage: number;
-  totalCount: number;
-}
-
 export interface FetchBooksParams {
   category_id?: number;
   news?: boolean;
@@ -120,11 +109,31 @@ export interface FetchBooksResponse {
   pagination: Pagination;
 }
 
-export type ViewMode = "list" | "grid";
+// Cart ================================================
+export interface Cart {
+  id: number;
+  bookId: number;
+  title: string;
+  summary: string;
+  quantity: number;
+  price: number;
+}
 
 export interface AddCartParams {
   book_id: number;
   quantity: number;
+}
+
+// Order ================================================
+export interface Order {
+  id: number;
+  createdAt: string;
+  address: string;
+  receiver: string;
+  contact: string;
+  bookTitle: string;
+  totalQuantity: number;
+  totalPrice: number;
 }
 
 export interface OrderSheet {
@@ -155,4 +164,13 @@ export interface OrderDetailItem {
 
 export interface OrderListItem extends Order {
   detail?: OrderDetailItem[];
+}
+
+// Review ================================================
+export interface BookReviewItem {
+  id: number;
+  userName: string;
+  content: string;
+  createdAt: string;
+  score: number;
 }

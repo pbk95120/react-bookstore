@@ -1,9 +1,9 @@
-import { Cart } from "@/types/type";
-import Button from "../common/Button";
-import Title from "../common/Title";
-import CheckIconButton from "./CheckIconButton";
 import { useMemo } from "react";
-import { useAlert } from "../../hooks/useAlert";
+import { Cart } from "@/types/type";
+import { useAlert } from "@/hooks/useAlert";
+import Button from "@/components/common/Button";
+import Title from "@/components/common/Title";
+import CheckIconButton from "@/components/cart/CheckIconButton";
 
 interface Props {
   cart: Cart;

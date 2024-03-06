@@ -1,13 +1,12 @@
+import { requestHandler } from "@/api/http";
 import { Order, OrderSheet, OrderDetailItem } from "@/types/type";
-import { httpClient } from "./http";
 
 /**
  * 주문 제출 Post API
  * @returns 카테고리 목록
  */
 export const createOrder = async (orderData: OrderSheet) => {
-  const response = await httpClient().post("/orders", orderData);
-  return response.data;
+  return await requestHandler<OrderSheet>("post", "/orders", orderData);
 };
 
 /**
@@ -15,8 +14,7 @@ export const createOrder = async (orderData: OrderSheet) => {
  * @returns 주문 목록
  */
 export const fetchOrders = async () => {
-  const response = await httpClient().get<Order[]>("/orders");
-  return response.data;
+  return await requestHandler<Order[]>("get", "/orders");
 };
 
 /**
@@ -24,8 +22,5 @@ export const fetchOrders = async () => {
  * @returns 주문 목록
  */
 export const fetchOrder = async (orderId: number) => {
-  const response = await httpClient().get<OrderDetailItem[]>(
-    `/orders/${orderId}`
-  );
-  return response.data;
+  return await requestHandler<OrderDetailItem>("get", `/orders/${orderId}`);
 };

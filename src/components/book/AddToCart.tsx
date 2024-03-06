@@ -1,9 +1,9 @@
-import { BookDetail } from "@/types/type";
-import Button from "../common/Button";
-import InputText from "../common/InputText";
 import { useState } from "react";
-import { useBook } from "../../hooks/useBook";
 import { Link } from "react-router-dom";
+import { useBook } from "@/hooks/useBook";
+import { BookDetail } from "@/types/type";
+import Button from "@/components/common/Button";
+import InputText from "@/components/common/InputText";
 
 interface Props {
   book: BookDetail;

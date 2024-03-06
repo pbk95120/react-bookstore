@@ -1,5 +1,5 @@
+import { httpClient, requestHandler } from "@/api/http";
 import { FetchBooksParams, FetchBooksResponse } from "@/types/type";
-import { httpClient } from "./http";
 
 /**
  * 책 목록을 조회하는 API
@@ -7,7 +7,7 @@ import { httpClient } from "./http";
  */
 export const fetchBooks = async (params: FetchBooksParams) => {
   try {
-    const response = await httpClient().get<FetchBooksResponse>("/books", {
+    const response = await httpClient.get<FetchBooksResponse>("/books", {
       params: params,
     });
 
@@ -28,8 +28,7 @@ export const fetchBooks = async (params: FetchBooksParams) => {
  * @param FetchBooksParams
  */
 export const fetchBook = async (bookId: string) => {
-  const response = await httpClient().get(`/books/${bookId}`);
-  return response.data;
+  return await requestHandler("get", `/books/${bookId}`);
 };
 
 /**
@@ -37,8 +36,7 @@ export const fetchBook = async (bookId: string) => {
  * @param FetchBooksParams
  */
 export const likeBook = async (bookId: number) => {
-  const response = await httpClient().post(`/likes/${bookId}`);
-  return response.data;
+  return await requestHandler("post", `/likes/${bookId}`);
 };
 
 /**
@@ -46,6 +44,5 @@ export const likeBook = async (bookId: number) => {
  * @param FetchBooksParams
  */
 export const unlikeBook = async (bookId: number) => {
-  const response = await httpClient().delete(`/likes/${bookId}`);
-  return response.data;
+  return await requestHandler("delete", `/likes/${bookId}`);
 };

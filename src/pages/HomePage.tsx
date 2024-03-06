@@ -1,6 +1,6 @@
-import Title from "../components/common/Title";
-import Button from "../components/common/Button";
-import ThemeSwitchButton from "../components/common/ThemeSwitchButton";
+import Title from "@/components/common/Title";
+import Button from "@/components/common/Button";
+import ThemeSwitchButton from "@/components/common/ThemeSwitchButton";
 
 const HomePage = () => {
   return (

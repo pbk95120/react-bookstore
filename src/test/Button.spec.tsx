@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Button from "../components/common/Button";
+import Button from "@/components/common/Button";
 
 describe("Button 컴포넌트", () => {
   test("버튼 렌더링 확인", () => {

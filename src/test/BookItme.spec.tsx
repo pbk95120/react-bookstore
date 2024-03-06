@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import BookItem from "../components/books/BookItem";
 import { Book } from "@/types/type";
+import BookItem from "@/components/books/BookItem";
 
 const dummyBook: Book = {
   id: 1,

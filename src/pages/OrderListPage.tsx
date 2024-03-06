@@ -1,8 +1,8 @@
-import { useOrders } from "../hooks/useOrder";
-import Title from "../components/common/Title";
-import Button from "../components/common/Button";
-import { formatDate, formatNumber } from "../utils/format";
 import React from "react";
+import { formatDate, formatNumber } from "@/utils/format";
+import { useOrders } from "@/hooks/useOrder";
+import Title from "@/components/common/Title";
+import Button from "@/components/common/Button";
 
 const OrderListPage = () => {
   const { orders, selectedItemId, selectOrderItem } = useOrders();

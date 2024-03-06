@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Title from "../components/common/Title";
+import Title from "@/components/common/Title";
 
 describe("Title 컴포넌트", () => {
   test("color prop이 주어지지 않으면 기본값 'brown'으로 렌더링되어야 함", () => {

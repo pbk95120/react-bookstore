@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "./Button";
 import { FaAngleDown } from "react-icons/fa";
+import Button from "@/components/common/Button";
 
 interface Props {
   children: React.ReactNode;

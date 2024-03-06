@@ -1,6 +1,6 @@
 import { FaHeart } from "react-icons/fa";
-import Button from "../common/Button";
 import { BookDetail } from "@/types/type";
+import Button from "@/components/common/Button";
 
 interface Props {
   book: BookDetail;

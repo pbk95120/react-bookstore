@@ -1,8 +1,8 @@
-import { Book } from "@/types/type";
-import { getImgSrc } from "../../utils/image";
-import { formatNumber } from "../../utils/format";
-import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
+import { Book } from "@/types/type";
+import { getImgSrc } from "@/utils/image";
+import { formatNumber } from "@/utils/format";
 
 interface Props {
   book: Book;
@@ -16,7 +16,7 @@ const BookItem = ({ book, view }: Props) => {
         view === "grid" ? "flex flex-col shadow-md" : "flex flex-row shadow-md"
       }
     >
-      <Link to={`/book/${book.id}`}>
+      <Link to={`/book/${book.id}`} className="w-full">
         <div
           className={
             view === "grid"
@@ -38,6 +38,7 @@ const BookItem = ({ book, view }: Props) => {
           <h2 className="text-xl font-bold mb-3">{book.title}</h2>
           <p className="text-sm	mb-1 text-lightgray">{book.summary}</p>
           <p className="text-sm	mb-1 text-lightgray">{book.author}</p>
+          <div></div>
           <p className="text-sm	font-bold mb-1 text-grey">
             {formatNumber(book.price)}원
           </p>

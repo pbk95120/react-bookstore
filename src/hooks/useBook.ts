@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { fetchBook, likeBook, unlikeBook } from "../api/books.api";
-import { BookDetail } from "@/types/type";
-import { useAuthStore } from "../store/authStore";
-import { useAlert } from "./useAlert";
-import { addCart } from "../api/carts.api";
+import { fetchBook, likeBook, unlikeBook } from "@/api/books.api";
+import { addCart } from "@/api/carts.api";
+import { useAuthStore } from "@/store/authStore";
+import { useAlert } from "@/hooks/useAlert";
+import { BookDetail, BookReviewItem } from "@/types/type";
+import { fetchBookReview } from "@/api/review.api";
 
 export const useBook = (bookId: string | undefined) => {
   const [book, setBook] = useState<BookDetail | null>(null);
   const [cartAdded, setCardAdded] = useState(false);
+  const [reviews, setReviews] = useState<BookReviewItem[]>([]);
   const { isLoggedIn } = useAuthStore();
   const { showAlert } = useAlert();
 
@@ -54,7 +56,11 @@ export const useBook = (bookId: string | undefined) => {
     fetchBook(bookId).then((data) => {
       setBook(data);
     });
+
+    fetchBookReview(bookId).then((data) => {
+      setReviews(data);
+    });
   }, [bookId]);
 
-  return { book, likeToggle, AddToCart, cartAdded };
+  return { book, likeToggle, AddToCart, cartAdded, reviews };
 };

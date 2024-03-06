@@ -1,12 +1,10 @@
-import MainFooter from "../components/common/MainFooter";
-import MainHeader from "../components/common/MainHeader";
-import Sidebar from "../components/common/Sidebar";
+import MainFooter from "@/components/common/MainFooter";
+import MainHeader from "@/components/common/MainHeader";
 
 const HomePage = () => {
   return (
     <>
       <MainHeader />
-      <Sidebar />
       <MainFooter />
     </>
   );
