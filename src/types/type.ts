@@ -109,6 +109,8 @@ export interface FetchBooksResponse {
   pagination: Pagination;
 }
 
+export type BookReviewItemWrite = Pick<BookReviewItem, "content" | "score">;
+
 // Cart ================================================
 export interface Cart {
   id: number;
@@ -173,4 +175,19 @@ export interface BookReviewItem {
   content: string;
   createdAt: string;
   score: number;
+}
+
+// Toast ================================================
+export type ToastType = "info" | "error";
+
+export interface ToastItem {
+  id: number;
+  message: string;
+  type: ToastType;
+}
+
+export interface ToastStore {
+  toasts: ToastItem[];
+  addToast: (message: string, type?: ToastType) => void;
+  removeToast: (id: number) => void;
 }

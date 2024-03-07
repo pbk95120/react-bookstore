@@ -16,3 +16,10 @@ const mockReviewData: BookReviewItem[] = Array.from(
 export const reviewsById = http.get("/api/reviews/:bookId", () => {
   return HttpResponse.json(mockReviewData, { status: 200 });
 });
+
+export const addReview = http.post("/api/reviews/:bookId", () => {
+  return HttpResponse.json(
+    { message: "리뷰가 등록되었습니다" },
+    { status: 200 }
+  );
+});

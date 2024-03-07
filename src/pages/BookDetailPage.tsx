@@ -8,6 +8,7 @@ import EllipsisBox from "@/components/common/EllipsisBox";
 import LikeButton from "@/components/book/LikeButton";
 import AddToCart from "@/components/book/AddToCart";
 import BookReview from "@/components/book/BookReview";
+import { Tab, Tabs } from "@/components/common/Tabs";
 
 const bookInfoList = [
   {
@@ -47,7 +48,7 @@ const bookInfoList = [
 
 const BookDetailPage = () => {
   const { bookId } = useParams();
-  const { book, likeToggle, reviews } = useBook(bookId);
+  const { book, likeToggle, reviews, addReview } = useBook(bookId);
 
   if (!book) {
     return null;
@@ -90,12 +91,26 @@ const BookDetailPage = () => {
         </div>
       </header>
       <div>
-        <Title size="medium">책 소개</Title>
-        <EllipsisBox linelimit={4}>{book.title}</EllipsisBox>
-        <Title size="large">목차</Title>
-        <p>{book.contents}</p>
-        <Title size="large">리뷰</Title>
-        <BookReview reviews={reviews} />
+        <Tabs>
+          <Tab title="상세 설명">
+            <Title size="medium" color="orange">
+              상세 설명
+            </Title>
+            <EllipsisBox linelimit={4}>{book.detail}</EllipsisBox>
+          </Tab>
+          <Tab title="목차">
+            <Title size="medium" color="orange">
+              목차
+            </Title>
+            <p>{book.contents}</p>
+          </Tab>
+          <Tab title="리뷰">
+            <Title size="medium" color="orange">
+              리뷰
+            </Title>
+            <BookReview reviews={reviews} onAdd={addReview} />
+          </Tab>
+        </Tabs>
       </div>
     </div>
   );

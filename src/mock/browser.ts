@@ -1,6 +1,6 @@
 import { setupWorker } from "msw/browser";
-import { reviewsById } from "@/mock/review";
+import { reviewsById, addReview } from "@/mock/review";
 
-const handlers = [reviewsById];
+const handlers = [reviewsById, addReview];
 
 export const worker = setupWorker(...handlers);

@@ -1,13 +1,19 @@
-import { BookReviewItem as IBookReviewItem } from "@/types/type";
+import {
+  BookReviewItem as IBookReviewItem,
+  BookReviewItemWrite,
+} from "@/types/type";
 import BookReviewItem from "./BookReviewItem";
+import BookReviewAdd from "./BookReviewAdd";
 
 interface Props {
   reviews: IBookReviewItem[];
+  onAdd: (data: BookReviewItemWrite) => void;
 }
 
-const BookReview = ({ reviews }: Props) => {
+const BookReview = ({ reviews, onAdd }: Props) => {
   return (
     <div className="flex flex-col gap-4">
+      <BookReviewAdd onAdd={onAdd} />
       {reviews.map((review) => (
         <BookReviewItem review={review} key={review.id} />
       ))}

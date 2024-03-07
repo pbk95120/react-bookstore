@@ -3,15 +3,17 @@ import { fetchBook, likeBook, unlikeBook } from "@/api/books.api";
 import { addCart } from "@/api/carts.api";
 import { useAuthStore } from "@/store/authStore";
 import { useAlert } from "@/hooks/useAlert";
-import { BookDetail, BookReviewItem } from "@/types/type";
-import { fetchBookReview } from "@/api/review.api";
+import { useToast } from "@/hooks/useToast";
+import { BookDetail, BookReviewItem, BookReviewItemWrite } from "@/types/type";
+import { addBookReview, fetchBookReview } from "@/api/review.api";
 
 export const useBook = (bookId: string | undefined) => {
   const [book, setBook] = useState<BookDetail | null>(null);
   const [cartAdded, setCardAdded] = useState(false);
-  const [reviews, setReviews] = useState<BookReviewItem[]>([]);
+  const [reviews, setReview] = useState<BookReviewItem[]>([]);
   const { isLoggedIn } = useAuthStore();
   const { showAlert } = useAlert();
+  const { showToast } = useToast();
 
   const likeToggle = () => {
     if (!isLoggedIn) {
@@ -28,6 +30,7 @@ export const useBook = (bookId: string | undefined) => {
           liked: false,
           likes: book.likes - 1,
         });
+        showToast("좋아요를 취소했습니다.");
       });
     } else {
       likeBook(book.id).then(() => {
@@ -36,6 +39,7 @@ export const useBook = (bookId: string | undefined) => {
           liked: true,
           likes: book.likes + 1,
         });
+        showToast("좋아요를 성공했습니다.");
       });
     }
   };
@@ -58,9 +62,20 @@ export const useBook = (bookId: string | undefined) => {
     });
 
     fetchBookReview(bookId).then((data) => {
-      setReviews(data);
+      setReview(data);
     });
   }, [bookId]);
 
-  return { book, likeToggle, AddToCart, cartAdded, reviews };
+  const addReview = (data: BookReviewItemWrite) => {
+    if (!book) return;
+
+    addBookReview(book.id.toString(), data).then((res) => {
+      fetchBookReview(book.id.toString()).then((reviews) => {
+        showAlert(res.message);
+        setReview(reviews);
+      });
+    });
+  };
+
+  return { book, likeToggle, AddToCart, cartAdded, reviews, addReview };
 };

@@ -9,8 +9,8 @@ interface Props {
 const Star = (props: Pick<IBookReviewItem, "score">) => {
   return (
     <span className="flex pl-2">
-      {Array.from({ length: props.score }, () => (
-        <FaStar className="text-orange" />
+      {Array.from({ length: props.score }, (_, index) => (
+        <FaStar key={index} className="text-orange" />
       ))}
     </span>
   );
