@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Book, ViewMode } from "@/types/type";
-import { QUERYSTRING } from "@/constants/querystring";
+import { QUERYSTRING } from "@/constants/constant";
 import BookItem from "@/components/books/BookItem";
 
 interface Props {

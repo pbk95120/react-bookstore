@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useCategory } from "@/hooks/useCategory";
-import { QUERYSTRING } from "@/constants/querystring";
+import { QUERYSTRING } from "@/constants/constant";
 import Button from "@/components/common/Button";
 
 const BooksFilter = () => {

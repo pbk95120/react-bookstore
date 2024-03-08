@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { FaList, FaTh } from "react-icons/fa";
 import Button from "@/components/common/Button";
-import { QUERYSTRING } from "@/constants/querystring";
+import { QUERYSTRING } from "@/constants/constant";
 
 const viewOptions = [
   {

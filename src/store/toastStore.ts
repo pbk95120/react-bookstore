@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { ToastStore } from "@/types/type";
 
 const useToastStore = create<ToastStore>((set) => ({

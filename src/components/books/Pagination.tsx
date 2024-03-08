@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router-dom";
-import { QUERYSTRING } from "@/constants/querystring";
 import { Pagination as IPagination } from "@/types/type";
-import { LIMIT } from "@/constants/pagination";
+import { LIMIT, QUERYSTRING } from "@/constants/constant";
 import Button from "@/components/common/Button";
 
 interface Props {
@@ -15,9 +14,7 @@ const Pagination = ({ pagination }: Props) => {
 
   const handleClickPage = (page: number) => {
     const newSearchParams = new URLSearchParams(searchParams);
-
     newSearchParams.set(QUERYSTRING.PAGE, page.toString());
-
     setSearchParams(newSearchParams);
   };
 
