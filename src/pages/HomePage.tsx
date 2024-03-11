@@ -1,20 +1,12 @@
-import Title from "@/components/common/Title";
-import Button from "@/components/common/Button";
-import ThemeSwitchButton from "@/components/common/ThemeSwitchButton";
+import { useMain } from "@/hooks/useMain";
+import MainReview from "@/components/main/MainReview";
 
 const HomePage = () => {
+  const { reviews } = useMain();
+
   return (
     <div>
-      <Title color="brown" size="small">
-        제목 테스트
-      </Title>
-      <ThemeSwitchButton />
-      <Button color="black" size="medium">
-        버튼 테스트
-      </Button>
-      <Button type="submit" color="white" size="large">
-        버튼 테스트
-      </Button>
+      <MainReview reviews={reviews} />
     </div>
   );
 };

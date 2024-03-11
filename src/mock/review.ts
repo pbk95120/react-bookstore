@@ -23,3 +23,7 @@ export const addReview = http.post("/api/reviews/:bookId", () => {
     { status: 200 }
   );
 });
+
+export const reviewForMain = http.get("/api/reviews", () => {
+  return HttpResponse.json(mockReviewData, { status: 200 });
+});
