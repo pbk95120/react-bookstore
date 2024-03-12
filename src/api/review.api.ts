@@ -27,6 +27,10 @@ export const addBookReview = async (
   );
 };
 
+/**
+ * 메인화면 리뷰 조회 API
+ * @returns 카테고리 목록
+ */
 export const fetchReviewAll = async () => {
   return await requestHandler<BookReviewItem[]>("get", `/reviews`);
 };

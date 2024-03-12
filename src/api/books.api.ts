@@ -10,7 +10,6 @@ export const fetchBooks = async (params: FetchBooksParams) => {
     const response = await httpClient.get<FetchBooksResponse>("/books", {
       params: params,
     });
-
     return response.data;
   } catch (error) {
     return {
@@ -45,4 +44,12 @@ export const likeBook = async (bookId: number) => {
  */
 export const unlikeBook = async (bookId: number) => {
   return await requestHandler("delete", `/likes/${bookId}`);
+};
+
+/**
+ * 베스트 셀러 목록을 조회하는 API
+ * @param FetchBooksParams
+ */
+export const fetchBestBooks = async () => {
+  return await requestHandler("get", `/books/best`);
 };

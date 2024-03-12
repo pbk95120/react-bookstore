@@ -14,9 +14,11 @@ const MainHeader = () => {
 
   return (
     <header className="flex justify-between	items-center py-5 px-0 border-b border-solid  w-full my-0 mx-auto max-w-screen-lg">
-      <h1 className="logo">
-        <img src={logo} alt="book store" className="w-48" />
-      </h1>
+      <Link to={"/"}>
+        <h1 className="logo">
+          <img src={logo} alt="book store" className="w-48" />
+        </h1>
+      </Link>
       <nav>
         <ul className="flex gap-8">
           {category.map((item) => (
