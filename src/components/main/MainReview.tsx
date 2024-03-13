@@ -20,7 +20,9 @@ export const MainReview = ({ reviews }: Props) => {
     <div className="pb-6">
       <Slider {...sliderSettings}>
         {reviews.map((review) => (
-          <BookReviewItem key={review.id} review={review} />
+          <div className="pr-6">
+            <BookReviewItem key={review.id} review={review} />
+          </div>
         ))}
       </Slider>
     </div>

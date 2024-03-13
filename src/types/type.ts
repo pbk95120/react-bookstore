@@ -191,3 +191,13 @@ export interface ToastStore {
   addToast: (message: string, type?: ToastType) => void;
   removeToast: (id: number) => void;
 }
+
+// Banner ================================================
+export interface Banner {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  target: string;
+}

@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-track {
+  padding: 3rem, 0;
+}
+
+.slick-slide > div {
+  margin: 0, 3rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
