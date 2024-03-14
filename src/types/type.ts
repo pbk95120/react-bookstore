@@ -111,6 +111,10 @@ export interface FetchBooksResponse {
 
 export type BookReviewItemWrite = Pick<BookReviewItem, "content" | "score">;
 
+export interface AddBookReviewResponse {
+  message: string;
+}
+
 // Cart ================================================
 export interface Cart {
   id: number;

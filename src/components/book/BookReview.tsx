@@ -2,8 +2,8 @@ import {
   BookReviewItem as IBookReviewItem,
   BookReviewItemWrite,
 } from "@/types/type";
-import BookReviewItem from "./BookReviewItem";
-import BookReviewAdd from "./BookReviewAdd";
+import BookReviewItem from "@/components/book/BookReviewItem";
+import BookReviewAdd from "@/components/book/BookReviewAdd";
 
 interface Props {
   reviews: IBookReviewItem[];

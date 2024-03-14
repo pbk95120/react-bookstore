@@ -33,7 +33,7 @@ function Banner({ banners }: Props) {
         className="flex ease-in-out"
         style={{ transform: `translateX(${transFormValue}%)` }}
       >
-        {banners.map((item, index) => (
+        {banners.map((item) => (
           <BannerItem key={item.id} banner={item} />
         ))}
       </div>

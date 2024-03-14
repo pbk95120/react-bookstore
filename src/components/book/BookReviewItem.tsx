@@ -1,6 +1,6 @@
+import { FaStar } from "react-icons/fa";
 import { BookReviewItem as IBookReviewItem } from "@/types/type";
 import { formatDate } from "@/utils/format";
-import { FaStar } from "react-icons/fa";
 
 interface Props {
   review: IBookReviewItem;
